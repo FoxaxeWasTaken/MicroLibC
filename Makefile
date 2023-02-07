@@ -13,7 +13,8 @@ GCC 		=	gcc
 
 NASMFLAGS	=	-f elf64
 
-SRC			=	strlen.asm
+SRC			=	strlen.asm	\
+				strchr.asm
 
 OBJ			=	$(SRC:.asm=.o)
 
