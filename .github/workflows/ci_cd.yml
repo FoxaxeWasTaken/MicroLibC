@@ -9,7 +9,7 @@ on:
       - 'ga-ignore-**'
 
 env:
-  MIRROR_URL: "git@github.com:EpitechPromo2026/B-PDG-300-NAN-3-1-PDGRUSH3-axel.idoux.git"
+  MIRROR_URL: "git@github.com:EpitechPromo2026/B-ASM-400-NAN-4-1-asmminilibc-axel.idoux.git"
   EXECUTABLES: "libasm.so"
 
 jobs:
