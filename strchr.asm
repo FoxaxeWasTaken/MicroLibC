@@ -6,22 +6,22 @@ strchr:
     enter 0, 0
     mov rax, rdi
     xor rcx, rcx
-    jmp loop
+    jmp .loop
 
-loop:
+.loop:
     cmp byte [rax + rcx], 0
-    jz end_fail
+    jz .end_fail
     cmp byte [rax + rcx], sil
-    jz end_success
+    jz .end_success
     inc rcx
-    jmp loop
+    jmp .loop
 
-end_success:
+.end_success:
     add rax, rcx
     leave
     ret
 
-end_fail:
+.end_fail:
     xor rax, rax
     leave
     ret

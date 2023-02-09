@@ -5,14 +5,14 @@ global strlen
 strlen:
     enter 0, 0
     xor rax, rax
-    jmp loop
+    jmp .loop
 
-loop:
+.loop:
     cmp byte [rdi + rax], 0
-    jz end
+    jz .end
     inc rax
-    jmp loop
+    jmp .loop
 
-end:
+.end:
     leave
     ret
