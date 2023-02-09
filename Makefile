@@ -21,7 +21,8 @@ SRC			=	strlen.asm	\
 				memcpy.asm	\
 				strcmp.asm	\
 				strncmp.asm	\
-				strrchr.asm
+				strrchr.asm	\
+				strpbrk.asm
 
 OBJ			=	$(SRC:.asm=.o)
 
