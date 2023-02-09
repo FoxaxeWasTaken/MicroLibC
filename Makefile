@@ -13,6 +13,8 @@ LD 			=	ld
 
 NASMFLAGS	=	-f elf64
 
+LDFLAGS		=	-shared
+
 SRC			=	strlen.asm	\
 				strchr.asm	\
 				memset.asm	\
@@ -26,7 +28,7 @@ OBJ			=	$(SRC:.asm=.o)
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-			$(LD) -shared -o $(NAME) $(OBJ)
+			$(LD) $(LDFLAGS) -o $(NAME) $(OBJ)
 
 %.o:		%.asm
 			$(NASM) $(NASMFLAGS) $< -o $@
