@@ -9,19 +9,24 @@ NAME		=	libasm.so
 
 NASM		=	nasm
 
-GCC 		=	gcc
+LD 			=	ld
 
 NASMFLAGS	=	-f elf64
 
 SRC			=	strlen.asm	\
-				strchr.asm
+				strchr.asm	\
+				memset.asm	\
+				memcpy.asm	\
+				strcmp.asm	\
+				strncmp.asm
+				# strrchr.asm
 
 OBJ			=	$(SRC:.asm=.o)
 
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-			$(GCC) --shared -o $(NAME) $(OBJ)
+			$(LD) -shared -o $(NAME) $(OBJ)
 
 %.o:		%.asm
 			$(NASM) $(NASMFLAGS) $< -o $@
