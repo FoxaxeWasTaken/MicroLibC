@@ -21,7 +21,6 @@ strrchr:
     enter 0, 0
     xor rax, rax
     call strlen
-    dec rax
     mov rcx, rax
     mov rax, rdi
     jmp .loop
