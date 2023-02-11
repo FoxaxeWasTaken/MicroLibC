@@ -8,13 +8,13 @@ strncmp:
     jmp .loop
 
 .loop:
-    mov al, [rdi + rcx]
-    cmp al, [rsi + rcx]
-    jne .end_check_not_equal
-    cmp al, 0
-    jz .end_equal
     cmp rcx, rdx
     jge .end_equal
+    mov al, [rdi + rcx]
+    cmp al, 0
+    jz .end_equal
+    cmp al, [rsi + rcx]
+    jne .end_check_not_equal
     inc rcx
     jmp .loop
 
