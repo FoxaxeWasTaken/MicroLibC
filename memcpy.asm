@@ -11,8 +11,8 @@ memcpy:
 .loop:
     cmp rdx, rcx
     jz .end
-    mov R8B, byte [rsi + rcx]
-    mov byte [rax + rcx], R8B
+    mov r8b, byte [rsi + rcx]
+    mov byte [rax + rcx], r8b
     inc rcx
     jmp .loop
 
