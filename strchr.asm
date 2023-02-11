@@ -9,10 +9,10 @@ strchr:
     jmp .loop
 
 .loop:
-    cmp byte [rax + rcx], 0
-    jz .end_fail
     cmp byte [rax + rcx], sil
     jz .end_success
+    cmp byte [rax + rcx], 0
+    jz .end_fail
     inc rcx
     jmp .loop
 
