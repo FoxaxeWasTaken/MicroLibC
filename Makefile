@@ -15,15 +15,16 @@ NASMFLAGS	=	-f elf64
 
 LDFLAGS		=	-shared
 
-SRC			=	strlen.asm	\
-				strchr.asm	\
-				memset.asm	\
-				memcpy.asm	\
-				strcmp.asm	\
-				strncmp.asm	\
-				strrchr.asm	\
-				strpbrk.asm	\
-				memmove.asm
+SRC			=	strlen.asm		\
+				strchr.asm		\
+				memset.asm		\
+				memcpy.asm		\
+				strcmp.asm		\
+				strncmp.asm		\
+				strrchr.asm		\
+				strpbrk.asm		\
+				memmove.asm		\
+				strcasecmp.asm
 
 OBJ			=	$(SRC:.asm=.o)
 
