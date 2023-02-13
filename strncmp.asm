@@ -5,26 +5,26 @@ global strncmp
 strncmp:
     enter 0, 0
     xor rcx, rcx
+    xor rax, rax
+    xor r8, r8
     jmp .loop
 
 .loop:
+    mov al, byte [rdi + rcx]
+    mov r8b, byte [rsi + rcx]
     cmp rcx, rdx
-    jge .end_equal
-    mov al, [rdi + rcx]
+    jz .end
     cmp al, 0
-    jz .end_equal
-    cmp al, [rsi + rcx]
-    jne .end_check_not_equal
+    jz .end
+    cmp r8b, 0
+    jz .end
+    cmp al, r8b
+    jnz .end
     inc rcx
     jmp .loop
 
-.end_equal:
-    xor rax, rax
-    leave
-    ret
-
-.end_check_not_equal:
-    sub al, [rsi + rcx]
+.end:
+    sub al, r8b
     movsx rax, al
     leave
     ret

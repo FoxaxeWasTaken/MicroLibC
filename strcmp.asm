@@ -8,30 +8,19 @@ strcmp:
     jmp .loop
 
 .loop:
-    mov al, [rdi + rcx]
-    cmp al, [rsi + rcx]
-    jne .end_check_not_equal
+    mov al, byte [rdi + rcx]
+    mov r8b, byte [rsi + rcx]
     cmp al, 0
-    jz .end_equal
+    jz .end
+    cmp r8b, 0
+    jz .end
+    cmp al, r8b
+    jnz .end
     inc rcx
     jmp .loop
 
-.end_equal:
-    xor rax, rax
-    leave
-    ret
-
-.end_check_not_equal:
-    cmp al, [rsi + rcx]
-    jg .end_greater
-    jmp .end_lesser
-
-.end_greater:
-    mov rax, 1
-    leave
-    ret
-
-.end_lesser:
-    mov rax, -1
+.end:
+    sub al, r8b
+    movsx rax, al
     leave
     ret

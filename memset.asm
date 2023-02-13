@@ -11,7 +11,7 @@ memset:
 .loop:
     cmp rcx, rdx
     jz .end
-    mov [rax + rcx], sil
+    mov byte [rax + rcx], sil
     inc rcx
     jmp .loop
 
