@@ -25,7 +25,8 @@ SRC			=	strlen.asm		\
 				strpbrk.asm		\
 				memmove.asm		\
 				strcasecmp.asm	\
-				strstr.asm
+				strstr.asm		\
+				strcspn.asm
 
 OBJ			=	$(SRC:.asm=.o)
 
