@@ -28,7 +28,13 @@ SRC			=	src/strlen.asm		\
 				src/strstr.asm		\
 				src/strcspn.asm
 
+BONUS_SRC	=	bonus/index.asm		\
+				bonus/rindex.asm	\
+				bonus/memfrob.asm
+
 OBJ			=	$(SRC:.asm=.o)
+
+BONUS_OBJ	=	$(BONUS_SRC:.asm=.o)
 
 all:		$(NAME)
 
@@ -38,8 +44,12 @@ $(NAME):	$(OBJ)
 %.o:		%.asm
 			$(NASM) $(NASMFLAGS) $< -o $@
 
+bonus:		$(OBJ) $(BONUS_OBJ)
+			$(LD) $(LDFLAGS) -o $(NAME) $(OBJ) $(BONUS_OBJ)
+
 clean:
 			rm -f $(OBJ)
+			rm -f $(BONUS_OBJ)
 
 fclean:		clean
 			rm -f $(NAME)
