@@ -10,10 +10,10 @@ strncmp:
     jmp .loop
 
 .loop:
-    mov al, byte [rdi + rcx]
-    mov r8b, byte [rsi + rcx]
     cmp rcx, rdx
     jz .end
+    mov al, byte [rdi + rcx]
+    mov r8b, byte [rsi + rcx]
     cmp al, 0
     jz .end
     cmp r8b, 0
