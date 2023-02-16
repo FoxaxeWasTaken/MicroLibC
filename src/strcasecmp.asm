@@ -20,23 +20,25 @@ strcasecmp:
     jmp .loop
 
 .check_al:
-    cmp al, 'A'
+    mov r9b, al
+    cmp r9b, 'A'
     jb .check_r8
-    cmp al, 'Z'
+    cmp r9b, 'Z'
     ja .check_r8
-    add al, 0x20
-    cmp al, r8b
+    add r9b, 0x20
+    cmp r9b, r8b
     jnz .end
     inc rcx
     jmp .loop
 
 .check_r8:
-    cmp r8b, 'A'
+    mov r10b, r8b
+    cmp r10b, 'A'
     jb .end
-    cmp r8b, 'Z'
+    cmp r10b, 'Z'
     ja .end
-    add r8b, 0x20
-    cmp al, r8b
+    add r10b, 0x20
+    cmp r9b, r10b
     jnz .end
     inc rcx
     jmp .loop
