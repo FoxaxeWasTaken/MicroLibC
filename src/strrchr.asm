@@ -26,7 +26,7 @@ strrchr:
     jmp .loop
 
 .loop:
-    cmp rcx, 0
+    cmp rcx, -1
     jz .end_fail
     cmp byte [rax + rcx], sil
     jz .end_success
