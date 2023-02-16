@@ -30,7 +30,8 @@ SRC			=	src/strlen.asm		\
 
 BONUS_SRC	=	bonus/index.asm		\
 				bonus/rindex.asm	\
-				bonus/memfrob.asm
+				bonus/memfrob.asm	\
+				bonus/ffs.asm
 
 OBJ			=	$(SRC:.asm=.o)
 
