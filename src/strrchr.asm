@@ -3,9 +3,6 @@ section .text
 global strrchr
 global rindex
 
-rindex:
-    jmp strrchr
-
 strlen:
     enter 0, 0
     xor rax, rax
@@ -21,6 +18,7 @@ strlen:
     leave
     ret
 
+rindex:
 strrchr:
     enter 0, 0
     xor rax, rax

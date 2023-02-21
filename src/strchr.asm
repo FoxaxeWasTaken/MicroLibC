@@ -4,8 +4,6 @@ global strchr
 global index
 
 index:
-    jmp strchr
-
 strchr:
     enter 0, 0
     mov rax, rdi
