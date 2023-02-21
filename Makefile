@@ -26,9 +26,8 @@ SRC			=	src/strlen.asm		\
 				src/memmove.asm		\
 				src/strcasecmp.asm	\
 				src/strstr.asm		\
-				src/strcspn.asm
-
-BONUS_SRC	=	bonus/index.asm		\
+				src/strcspn.asm		\
+				bonus/index.asm		\
 				bonus/rindex.asm	\
 				bonus/memfrob.asm	\
 				bonus/ffs.asm
@@ -44,9 +43,6 @@ $(NAME):	$(OBJ)
 
 %.o:		%.asm
 			$(NASM) $(NASMFLAGS) $< -o $@
-
-bonus:		$(OBJ) $(BONUS_OBJ)
-			$(LD) $(LDFLAGS) -o $(NAME) $(OBJ) $(BONUS_OBJ)
 
 clean:
 			rm -f $(OBJ)
