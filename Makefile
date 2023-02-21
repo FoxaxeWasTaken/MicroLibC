@@ -27,8 +27,6 @@ SRC			=	src/strlen.asm		\
 				src/strcasecmp.asm	\
 				src/strstr.asm		\
 				src/strcspn.asm		\
-				bonus/index.asm		\
-				bonus/rindex.asm	\
 				bonus/memfrob.asm	\
 				bonus/ffs.asm
 

@@ -1,6 +1,10 @@
 bits 64
 section .text
 global strrchr
+global rindex
+
+rindex:
+    jmp strrchr
 
 strlen:
     enter 0, 0
